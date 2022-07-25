@@ -1,5 +1,5 @@
 resource "aws_instance" "example" {
-  emi=var.AMIS[var.AWS_REGION]
+  ami=var.AMIS[var.AWS_REGION]
   instance_type = "t2.micro"
 
 
@@ -25,9 +25,9 @@ resource "aws_ebs_volume" "ebs-volume-1" {
   }
 }
 
-resource "aws_volume_attachment" "ebs-volume-attachment" {
+resource "aws_volume_attachment" "ebs-volume-1-attachment" {
   device_name  = var.INSTANCE_DEVICE_NAME
   volume_id    = aws_ebs_volume.ebs-volume-1.id
   instance_id  = aws_instance.example.id
-  skip_destroy = true 
+  skip_destroy = true                            # skip destroy to avoid issues with terraform destroy
 }

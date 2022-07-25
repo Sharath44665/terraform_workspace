@@ -16,3 +16,7 @@ variable "AMIS" {
     ap-south-1 = "ami-068257025f72f470d"
   }
 }
+
+variable "INSTANCE_DEVICE_NAME" {
+  default = "/dev/xvdh"
+}
