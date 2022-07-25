@@ -14,7 +14,7 @@ resource "aws_instance" "example" {
 resource "aws_ebs_volume" "ebs-volume-1" {
     availability_zone = "ap-south-1"
     size=20
-    type = gp2
+    type = "gp2"
     tags = {
       "Name" = "extra volume data"
     }
