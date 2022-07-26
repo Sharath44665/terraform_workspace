@@ -31,7 +31,8 @@ resource "aws_route53_record" "mail1-record" {
     "10 aspmx3.googlemail.com.",
   ]
 
-  output "ns-servers" {
+  
+}
+output "ns-servers" {
     value = aws_route53_zone.sharath-example.name_servers
   }
-}
