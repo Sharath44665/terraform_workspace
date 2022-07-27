@@ -2,8 +2,8 @@ resource "aws_launch_configuration" "example-launchconfig" {
   name = "example-launchconfig"
   image_id = var.AMIS[var.AWS_REGION]
   instance_type = "t2.micro"
-  key_name = aws_keypair.mykey.key_name
-  security_groups = [aws_security_groups.allow-ssh.id]
+  key_name = aws_key_pair.mykeypair.key_name
+  security_groups = [aws_security_group.allow-ssh.id]
 }
 
 resource "aws_autoscaling_group" "example-autoscaling" {
