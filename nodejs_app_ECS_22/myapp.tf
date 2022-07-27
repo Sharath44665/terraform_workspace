@@ -28,7 +28,7 @@ resource "aws_elb" "myapp-elb" {
     timeout             = 30
     target              = "HTTP:3000/"
     interval            = 60
-  }
+  } 
 
   cross_zone_load_balancing   = true
   idle_timeout                = 400
